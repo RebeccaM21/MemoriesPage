@@ -1,8 +1,13 @@
-import express from "express";
-import cors from "cors"; 
 import bodyParser from "body-parser";
+import cors from "cors"; 
+import dotenv from 'dotenv'; 
+import express from "express";
 import mongoose from "mongoose";
 import postRoutes from "./routes/posts.js"; 
+
+dotenv.config({
+    path: `.env.${process.env.NODE_ENV}`
+});
 
 const app = express(); 
 
@@ -14,9 +19,21 @@ app.use(cors());
 
 // MongoDB cloud Atlas - MongoDB will host my database on their cloud
 
-const CONNECTION_URL = 'mongodb+srv://beckympi:beckympi123@cluster0.cr6swu1.mongodb.net/?retryWrites=true&w=majority'
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 
-mongoose.connect(CONNECTION_URL, { useNewURLParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
-    .catch((error) => console.log(error.message)); 
+const main = async () => {
+    console.log(`connecting to database at ${process.env.DB_URI}`);
+    await mongoose.connect(process.env.DB_URI)
+} 
+    
+    main().catch((error) => console.log(error.message)); 
+
+const server = app.listen(PORT, HOST, () => {
+    const SERVERHOST = server.address().address;
+    const SERVERPORT = server.address().port;
+    console.log(`app listening at http://${SERVERHOST}:${SERVERPORT}`);
+})
+
+    export default server; 
+ 

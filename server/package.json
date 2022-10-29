@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "NODE_ENV=test mocha --timeout=10000 --exit"
+    "test": "NODE_ENV=test mocha --timeout=10000 --exit",
+    "start": "NODE_ENV=development nodemon index.js"
   },
   "keywords": [],
   "author": "",

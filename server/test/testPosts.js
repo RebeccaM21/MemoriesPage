@@ -5,14 +5,8 @@
         "creator": "Becky",
          "tags": ["test", "firstPost", "hello"], 
          "selectedFile": "file.mp4",
-         "likeCount": { 
-             "type": 50,
-             "default" : 0, 
-         }, 
-         "createdAt": { 
-             "type": 01 / 01 / 2001, 
-             "default" : new Date(), 
-        }, 
+         "likeCount": 50,
+         "createdAt": Date.now(), 
     },
     {
         "title": "Test 2",
@@ -20,14 +14,8 @@
         "creator": "Louise",
          "tags": ["test", "secondPost", "welcome"], 
          "selectedFile": "file.mp4",
-         "likeCount": { 
-             "type": 10,
-             "default" : 0, 
-         }, 
-         "createdAt": { 
-             "type": 02 / 02 / 2002, 
-             "default" : new Date(), 
-        }, 
+         "likeCount": 10,
+         "createdAt": Date.now(), 
     },
     {
         "title": "Test 3",
@@ -35,14 +23,8 @@
         "creator": "William",
          "tags": ["test", "thirdPost", "goodbye"], 
          "selectedFile": "file.mp4",
-         "likeCount": { 
-             "type": 1000,
-             "default" : 0, 
-         }, 
-         "createdAt": { 
-             "type": 05 / 05 / 2005, 
-             "default" : new Date(), 
-        }, 
+         "likeCount": 1000, 
+         "createdAt": Date.now(), 
     }
  ];
 

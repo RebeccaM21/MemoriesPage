@@ -1,15 +1,13 @@
-import useStyles from './styles.js';
+import PostStyles from "./styles";
 
-const Post = () => { 
-    const classes = useStyles(); 
+const Post = ({ post }) => { 
+
 
     return (
-    
-        <h1>
-            Post
-        </h1>
-    )
-
+        <>
+            <PostStyles post={ post } />
+    </>
+            )
 }
  
 export default Post; 
